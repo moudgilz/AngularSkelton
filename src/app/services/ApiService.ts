@@ -12,12 +12,23 @@ export class ApiService {
 
 
   public getTrip(fromDt, toDate) {
+    debugger
     // return this.httpClient.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9bce8c2c59be422f81fe1adb6ba7b304');
-    return this.httpClient.get("http://localhost:7071/api/Function1?from=" + fromDt + "&to=" + toDate + "");
+    return this.httpClient.get("api/Function1?from=" + fromDt + "&to=" + toDate + "");
   }
 
+
+  // for authentication.
+  public AuthTest() {
+    debugger
+    // return this.httpClient.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9bce8c2c59be422f81fe1adb6ba7b304');
+    return this.httpClient.get("api/AuthTest");
+  }
+
+
+
   public postTrip(dataModel) {
-    const uri = 'http://localhost:7071/api/Function2';
+    const uri = 'api/Function2';
     const requestType = 'POST';
     const formData = new FormData(); // Currently empty
     formData.append('model', JSON.stringify(dataModel));
