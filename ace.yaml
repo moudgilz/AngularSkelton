@@ -1,0 +1,78 @@
+# App Configuration
+name: saleportal-frontend
+
+# Contact Information
+contact:
+  responsible: DevOps
+  slack_channel: '#subquip'
+
+# Helm chart configuration
+helm:
+  chart: ace/web
+  version: ^5.0.1
+  cluster: kubernetes.maze-test
+  registry: evrydevopsprod.azurecr.io
+  repo: https://evry-ace.github.io/helm-charts/
+  repoName: ace
+
+  values:
+    replicaCount: 3
+    liveness:
+      port: 80
+    readiness:
+      port: 80
+      delay: 2
+      periodSeconds: 5
+    service:
+      targetPort: 80
+    podDisruptionBudget:
+      minAvailable: 1
+
+environments:
+  dev:
+    cluster: kubernetes.maze-test
+    namespace: saleportal-dev
+    values:
+      ingress:
+        enabled: true
+        hosts:
+          - saleportal.dev.maze.evry.site
+        tls:
+          - hosts:
+            - saleportal.dev.maze.evry.site
+            secretName: saleportal-tls-dev
+      cert:
+        enabled: true
+        secretName: saleportal-tls-dev
+  test:
+    cluster: kubernetes.maze-test
+    namespace: saleportal-test
+    values:
+      ingress:
+        enabled: true
+        hosts:
+          - saleportal.test.maze.evry.site
+        tls:
+          - hosts:
+            - saleportal.test.maze.evry.site
+            secretName: saleportal-tls-test
+      cert:
+        enabled: true
+        secretName: saleportal-tls-test
+  prod:
+    cluster: kubernetes.maze-prod
+    namespace: saleportal-prod
+    values:
+      ingress:
+        enabled: true
+        hosts:
+          - www.saleportal.com
+          - saleportal.com
+        tls:
+          - hosts:
+            - www.saleportal.com
+            - saleportal.com
+            secretName: saleportal-tls-prod
+      cert:
+        enabled: true
+        secretName: saleportal-tls-prod

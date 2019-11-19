@@ -1,0 +1,230 @@
+.justify-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.text-muted {
+  color: #90a4ae !important; }
+
+.with-nav-tabs.panel-default .nav-tabs > li > a,
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+    color: #777;
+}
+.with-nav-tabs.panel-default .nav-tabs > .open > a,
+.with-nav-tabs.panel-default .nav-tabs > .open > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > .open > a:focus,
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+    color: #777;
+	background-color: #ddd;
+	border-color: transparent;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:focus {
+	color: #555;
+	background-color: #fff;
+	border-color: #ddd;
+	border-bottom-color: transparent;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #777;   
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #ddd;
+}
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #555;
+}
+
+.nav-tabs{
+  border-bottom: 1px solid #dee2e6;
+  float: left;
+  width: 100%;
+  padding: 20px 0;
+  background: #c7c7c7;
+  margin-top: 10px;
+}
+
+.nav li a{
+  padding:20px;
+}
+h3{
+  margin:0;
+  padding: 10px 0;
+}
+
+.tab-pane-bdr{
+  border-bottom:1px solid #c7c7c7;
+display:block;
+    width: 100%;
+}
+
+.custom-nav{
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.custom-nav li.button{
+  padding: 8px 20px;
+}
+.custom-nav li{
+  list-style: none;
+  display: inline-block;
+  padding: 15px 20px;
+  border-right:1px solid #c7c7c7;
+}
+
+.custom-btn{
+  background: #c7c7c7;
+  border:1px solid #a0a0a0;
+  padding: 7px;
+  font-size:13px;
+}
+
+.custom-nav li a .fa{
+  font-size: 20px;
+}
+input:focus, textarea:focus{
+  box-shadow: none !important;
+  border:1px solid #c7c7c7 !important;
+}
+
+.dotted-bg{
+  border:2px dashed #c7c7c7;
+  width:100%;
+  padding: 30px 20px;
+  margin: 20px 0 10px;
+}
+
+.dotted-bg input, .dotted-bg textarea {
+  margin-bottom:20px;
+}
+
+.card{
+  margin-bottom: 14px;
+}
+
+.icon-nav{
+  padding: 0;
+  margin: 14px 0 26px;
+}
+
+.icon-nav li{
+  list-style: none;
+  display: inline-block;
+}
+
+.icon-nav li a{
+  border:1px solid #c7c7c7;
+  padding: 5px;
+  background:#e6e6e6;
+  float: left;
+  margin-right: 10px;
+  text-align: center;
+
+}
+
+.common-bg{
+  width:100%;
+  float:left;
+  background:#d8d8d8;
+  border:1px solid #c7c7c7;
+  padding: 15px 20px;
+  margin-top: 30px;
+}
+
+.white-search{
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  width:100%;
+  margin: 20px 0;
+}
+.white-search input{
+  border:none;
+}
+
+.white-search input:focus{
+  border:none !important;
+  box-shadow:none !important;
+}
+
+.content-box{
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width:100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.content-box h5{
+  text-transform: capitalize;
+  padding: 0;
+  margin:16px 0 10px;
+  font-size: 18px;
+}
+
+.content-box p{
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+.tilte-text{
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.info{
+  width:40px;
+  height: 40px;
+  border-radius:50%;
+  background: #f1f1f1;
+  text-align: center;
+  font-size: 16px;
+  color: #545454;
+  position: absolute;
+  right: -10px;
+  top: -14px;
+  line-height: 40px;
+  z-index: 9;
+}
+
+.btn-link:hover{
+  text-decoration: none;
+}
+// Dummy design css added
+// Add Content
+.content-textarea{
+  margin: 0px;
+  width: 800px;
+  height: 280px;
+ }
+ .float-left{
+  float: left;
+ }
+ .photo-box-ht{
+  height:280px;
+ }
+ .clear-both{
+  clear: both;
+ }
+ .date-height-box{
+  height:172px
+ }
+ .chk-valid-until{
+  padding: 20px 0 0 10px;
+ }

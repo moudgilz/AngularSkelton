@@ -1,0 +1,26 @@
+<div class="row">
+      <table>
+            <thead>
+                  <th>Trip Id</th>
+                  <th>Trip Name</th>
+                  <th>Trip Place</th>
+                  <th>Tourist Name</th>
+
+            </thead>
+            <tr *ngFor="let trip of listTrip">
+                  <td>
+                        <h3>{{trip.TripId}}</h3>
+                  </td>
+                  <td>
+                        <h3>{{trip.TripName}}</h3>
+                  </td>
+                  <td>
+                        <h3>{{trip.TripPlace}}</h3>
+                  </td>
+                  <td>
+                        <h3>{{trip.TripUserName}}</h3>
+                  </td>
+            </tr>
+            <tr><button type="button" (click)="postTrip()">Post Trip</button></tr>
+      </table>
+</div>
