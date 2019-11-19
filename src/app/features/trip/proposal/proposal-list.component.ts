@@ -14,12 +14,23 @@ export class ProposalListComponent implements OnInit {
   fromDt: '';
   toDate: ''
   ngOnInit() {
-    this.getNews(this.fromDt, this.toDate);
+   //this.getNews(this.fromDt, this.toDate);
+    this.checkAuth();
   }
 
+  // for auth check
+  checkAuth() {
+    debugger
+    this.apiService.AuthTest().subscribe((data) => {
+      this.listTrip = data['listTrip'];
+    }, error => {
+      console.log(error)
+    });
+  }
   getNews(fromDt, toDate) {
     fromDt = '01/10/2018';
-    toDate = '01/10/2019' 
+    toDate = '01/10/2019'
+    debugger
     this.apiService.getTrip(fromDt, toDate).subscribe((data) => {
       this.listTrip = data['listTrip'];
     }, error => {
