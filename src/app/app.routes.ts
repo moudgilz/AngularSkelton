@@ -4,7 +4,7 @@ import { HomeComponent } from './home.component';
 const APP_ROUTES: Routes = [
   {
     path: 'dashboard',
-    loadChildren: 'app/features/sale/shared/sale.module#SaleModule',
+    loadChildren: 'app/features/trip/shared/trip.module#SaleModule',
   },  
   {
     path: 'home',

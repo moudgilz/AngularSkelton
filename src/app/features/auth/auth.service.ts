@@ -43,7 +43,7 @@ export class AuthService {
   // When calling, options can be passed if desired
   // https://auth0.github.io/auth0-spa-js/classes/auth0client.html#getuser
   getUser$(options?): Observable<any> {
-    debugger
+    
     return this.auth0Client$.pipe(
       concatMap((client: Auth0Client) => from(client.getUser(options))),
       tap(user => this.userProfileSubject$.next(user))
@@ -51,7 +51,7 @@ export class AuthService {
   }
 
   localAuthSetup() {
-    debugger
+    
     // This should only be called on app initialization
     // Set up local authentication streams
     const checkAuth$ = this.isAuthenticated$.pipe(
@@ -69,15 +69,15 @@ export class AuthService {
   }
 
   login(redirectPath: string = '/') {
-    debugger
+    
     // A desired redirect path can be passed to login method
     // (e.g., from a route guard)
     // Ensure Auth0 client instance exists
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log in
-      debugger
+      
       client.loginWithRedirect({
-        
+
         redirect_uri: `${window.location.origin}`,
         appState: { target: redirectPath }
       });
@@ -85,7 +85,7 @@ export class AuthService {
   }
 
   handleAuthCallback() {
-    debugger
+    
     // Call when app reloads after user logs in with Auth0
     const params = window.location.search;
     if (params.includes('code=') && params.includes('state=')) {
@@ -114,7 +114,7 @@ export class AuthService {
   }
 
   logout() {
-    debugger
+    
     // Ensure Auth0 client instance exists
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
@@ -123,6 +123,11 @@ export class AuthService {
         returnTo: window.location.origin
       });
     });
+  }
+  getTokenSilently$(options?): Observable<string> {
+    return this.auth0Client$.pipe(
+      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
+    );
   }
 
 }

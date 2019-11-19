@@ -20,14 +20,18 @@ export class AppComponent implements OnInit {
     translate.use('en');
   }
   ngOnInit() {
-    
-   
-        // On initial load, check authentication state with authorization server
-    // Set up local auth streams if user is already authenticated
-    this.auth.localAuthSetup();
-    // Handle redirect from Auth0 login
-    
-    this.auth.handleAuthCallback();
+
+    const params = window.location.search;
+    if (params.includes('code=') && params.includes('state=')) {
+      this.router.navigate(['./dashboard', 'proposal'])
+    } else {
+      // On initial load, check authentication state with authorization server
+      // Set up local auth streams if user is already authenticated
+      this.auth.localAuthSetup();
+      // Handle redirect from Auth0 login
+
+      this.auth.handleAuthCallback();
+    }
   }
-  
+
 }
