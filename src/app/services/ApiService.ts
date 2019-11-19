@@ -8,11 +8,10 @@ import { IResult } from './iresult';
 })
 export class ApiService {
 
-  constructor(private httpClient: HttpClient ) { }
+  constructor(private httpClient: HttpClient) { }
 
 
   public getTrip(fromDt, toDate) {
-
     // return this.httpClient.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9bce8c2c59be422f81fe1adb6ba7b304');
     return this.httpClient.get("http://localhost:7071/api/Function1?from=" + fromDt + "&to=" + toDate + "");
   }

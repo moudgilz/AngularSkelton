@@ -19,7 +19,7 @@ export class ProposalListComponent implements OnInit {
 
   getNews(fromDt, toDate) {
     fromDt = '01/10/2018';
-    toDate = '01/10/2019'
+    toDate = '01/10/2019' 
     this.apiService.getTrip(fromDt, toDate).subscribe((data) => {
       this.listTrip = data['listTrip'];
     }, error => {
@@ -29,7 +29,7 @@ export class ProposalListComponent implements OnInit {
 
   postTrip() {
     this.tripModel = this.listTrip[1];
-    this.apiService.postTrip(this.tripModel).subscribe((data) => {      
+    this.apiService.postTrip(this.tripModel).subscribe((data) => {
       this.listTrip = data.body['listTrip'];
     }, error => {
       console.log(error)
