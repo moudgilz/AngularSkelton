@@ -1,4 +1,5 @@
 {
-  "clientId": "9v2Sp6f2Q46tcxrtKTK3Nu66s90aJJh0",
-  "domain": "moudgilz.auth0.com"
+  "clientId": "XnSHhSYfTOMA7lozzT4MX8tnPvF5WVg5",
+  "domain": "moudgilz.auth0.com",
+  "audience": "http://localhost:7071"
 }

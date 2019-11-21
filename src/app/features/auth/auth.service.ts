@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import createAuth0Client from '@auth0/auth0-spa-js';
 import Auth0Client from '@auth0/auth0-spa-js/dist/typings/Auth0Client';
-// import * as config from '../../../auth_config.json';
+import * as config from '../../../../auth_config.json';
 import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -13,9 +13,12 @@ export class AuthService {
   // Create an observable of Auth0 instance of client
   auth0Client$ = (from(
     createAuth0Client({
-      domain: 'moudgilz.auth0.com', //config.domain,
-      client_id: '9v2Sp6f2Q46tcxrtKTK3Nu66s90aJJh0', //config.clientId,
-      redirect_uri: `${window.location.origin}`
+      domain: config.domain,
+      client_id: config.clientId,
+      redirect_uri: `${window.location.origin}`,
+     audience: config.audience
+     //responseType: 'token id_token',
+      
     })
   ) as Observable<Auth0Client>).pipe(
     shareReplay(1), // Every subscription receives the same shared value
@@ -119,7 +122,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
       client.logout({
-        client_id: '9v2Sp6f2Q46tcxrtKTK3Nu66s90aJJh0',//config.clientId,
+        client_id: config.clientId,
         returnTo: window.location.origin
       });
     });
