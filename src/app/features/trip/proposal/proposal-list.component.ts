@@ -20,7 +20,7 @@ export class ProposalListComponent implements OnInit {
 
   // for auth check
   checkAuth() {
-    debugger
+    
     this.apiService.AuthTest().subscribe((data) => {
       this.listTrip = data['listTrip'];
     }, error => {
@@ -30,7 +30,7 @@ export class ProposalListComponent implements OnInit {
   getNews(fromDt, toDate) {
     fromDt = '01/10/2018';
     toDate = '01/10/2019'
-    debugger
+    
     this.apiService.getTrip(fromDt, toDate).subscribe((data) => {
       this.listTrip = data['listTrip'];
     }, error => {

@@ -12,7 +12,7 @@ export class ApiService {
 
 
   public getTrip(fromDt, toDate) {
-    debugger
+
     // return this.httpClient.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9bce8c2c59be422f81fe1adb6ba7b304');
     return this.httpClient.get("api/Function1?from=" + fromDt + "&to=" + toDate + "");
   }
@@ -20,9 +20,8 @@ export class ApiService {
 
   // for authentication.
   public AuthTest() {
-    debugger
     // return this.httpClient.get('https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9bce8c2c59be422f81fe1adb6ba7b304');
-    return this.httpClient.get("api/AuthTest");
+    return this.httpClient.get("http://localhost:7071/api/AuthTest");
   }
 
 
