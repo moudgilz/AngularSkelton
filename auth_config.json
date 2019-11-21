@@ -1,5 +1,5 @@
 {
   "clientId": "XnSHhSYfTOMA7lozzT4MX8tnPvF5WVg5",
   "domain": "moudgilz.auth0.com",
-  "audience": "http://localhost:7071"
+  "audience": "https://api.salil.com"
 }
